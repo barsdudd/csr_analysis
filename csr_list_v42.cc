@@ -209,7 +209,7 @@ void initInputRS(const char* list){
 bool initInputFile(int index){
    ostringstream oss;
    
-   cout << " prepareing " << fileList[index] << "......" << endl;
+   cout << " preparing " << fileList[index] << "......" << endl;
    if( fileE(fileList[index].c_str()) == NO_FILE_DIR_EXIST ){
       cout << fileList[index] << " DOES NOT EXIST. GO TO NEXT RUN..." << endl;
       return false;

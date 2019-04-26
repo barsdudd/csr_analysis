@@ -264,7 +264,7 @@ int getIPT(double pT){
 ////// CSR //////
 double aMass_h   = 1.008;
 //double aMass_h  = 1.00794;
-double aMass_d   = 2.0014;
+double aMass_d   = 2.014;
 double sigma_h   = 32.2e-27;
 double sigma_d   = 46.6e-27;
 //double lambda_h = 52.0;
