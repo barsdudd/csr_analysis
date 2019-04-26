@@ -1,0 +1,193 @@
+obj/sample.o: sample.cc \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TROOT.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TDirectory.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TNamed.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TObject.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/Rtypes.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/RConfig.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/RVersion.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/DllImport.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/Rtypeinfo.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/snprintf.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/strlcpy.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TGenericClassInfo.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TSchemaHelper.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TStorage.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVersionCheck.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/Riosfwd.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TBuffer.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TString.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMathBase.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TList.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TSeqCollection.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TCollection.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TIterator.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TDatime.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TUUID.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TFile.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TDirectoryFile.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMap.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/THashTable.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TUrl.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TTree.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TBranch.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TObjArray.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TAttFill.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TDataType.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TDictionary.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/Property.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/ESTLType.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TAttLine.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TAttMarker.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TArrayD.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TArray.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TArrayI.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TClass.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TObjString.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/ThreadLocalStorage.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/RConfigure.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVirtualTreePlayer.h \
+ Event.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVector3.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TError.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVector2.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrix.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixF.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixT.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixTBase.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixFBasefwd.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixDBasefwd.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVectorFfwd.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVectorDfwd.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixTUtils.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixFfwd.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixFUtils.h \
+ /seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixFUtilsfwd.h
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TROOT.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TDirectory.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TNamed.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TObject.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/Rtypes.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/RConfig.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/RVersion.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/DllImport.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/Rtypeinfo.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/snprintf.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/strlcpy.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TGenericClassInfo.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TSchemaHelper.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TStorage.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVersionCheck.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/Riosfwd.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TBuffer.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TString.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMathBase.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TList.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TSeqCollection.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TCollection.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TIterator.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TDatime.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TUUID.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TFile.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TDirectoryFile.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMap.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/THashTable.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TUrl.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TTree.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TBranch.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TObjArray.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TAttFill.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TDataType.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TDictionary.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/Property.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/ESTLType.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TAttLine.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TAttMarker.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TArrayD.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TArray.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TArrayI.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TClass.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TObjString.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/ThreadLocalStorage.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/RConfigure.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVirtualTreePlayer.h:
+
+Event.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVector3.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TError.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVector2.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrix.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixF.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixT.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixTBase.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixFBasefwd.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixDBasefwd.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVectorFfwd.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TVectorDfwd.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixTUtils.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixFfwd.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixFUtils.h:
+
+/seaquest/software/SharedExternals_v5/externals/root/root-5.34.24/include/TMatrixFUtilsfwd.h:
