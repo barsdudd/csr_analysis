@@ -15,7 +15,7 @@ int  colorList[] = {1, 2, 3, 6, 8, 9};
 ///// ROOT /////
 
 //// FILE ////
-const char* fileDir = "/seaquest/users/knagai/R008_analysis/data/";
+const char* fileDir = "/seaquest/users/knagai/R008_analysis/csr_analysis/data/";
 const char* fileDirNim3 = "/seaquest/users/arunts/NIM3/NIM3_profiles/";
 //// FILE ////
 
