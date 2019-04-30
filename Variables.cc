@@ -203,10 +203,11 @@ void shiftX2(double by){
       x2_bin[ix] += by;
 }
 int getIX2(double x2){
-   if( x2 <= x2_bin[0] || x2 > x2_bin[nBinsX2] )
-      return -1;
+   // if( x2 < x2_bin[0] || x2 > x2_bin[nBinsX2] )
+   //    return -1;
    int ix = -1;
-   while( x2 > x2_bin[ix+1] ) ix++;
+   while( x2 >= x2_bin[ix+1] ) ix++;
+   if( ix >= nBinsX2 ) ix = -1;
    return ix;
 }
 ///// X2 /////
