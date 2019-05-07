@@ -52,7 +52,8 @@ double getRDAverage(vector<int> rs, vector<double> nDimuons, bool potMode){
    double average = 0;
    double total   = 0;
    for( int irs = 0 ; irs < (int)rs.size() ; irs++ ){
-      double weight = potMode ? getPoT(rs[irs], 3, true, true) : nDimuons[irs];
+//      double weight = potMode ? getPoT(rs[irs], 3,  true, true) : nDimuons[irs];
+      double weight = potMode ? getPoT(rs[irs], 3, false, true) : nDimuons[irs];
       average += weight * getRD(rs[irs]);
       total   += weight;
    }
@@ -62,7 +63,8 @@ double getFracDAverage(vector<int> rs, vector<double> nDimuons, bool potMode){
    double average = 0;
    double total   = 0;
    for( int irs = 0 ; irs < (int)rs.size() ; irs++ ){
-      double weight = potMode ? getPoT(rs[irs], 3, true, true) : nDimuons[irs];
+//      double weight = potMode ? getPoT(rs[irs], 3,  true, true) : nDimuons[irs];
+      double weight = potMode ? getPoT(rs[irs], 3, false, true) : nDimuons[irs];
       average += weight * getFracD(rs[irs]);
       total   += weight;
    }
@@ -74,7 +76,8 @@ double getFracHDAverage(vector<int> rs, vector<double> nDimuons, bool potMode){
    double average = 0;
    double total   = 0;
    for( int irs = 0 ; irs < (int)rs.size() ; irs++ ){
-      double weight = potMode ? getPoT(rs[irs], 3, true, true) : nDimuons[irs];
+//      double weight = potMode ? getPoT(rs[irs], 3,  true, true) : nDimuons[irs];
+      double weight = potMode ? getPoT(rs[irs], 3, false, true) : nDimuons[irs];
       average += weight * getFracHD(rs[irs]);
       total   += weight;
    }
@@ -112,7 +115,8 @@ double getPurityAverage(vector<int> rs, vector<double> nDimuons, bool potMode){
    double average = 0;
    double total   = 0;
    for( int irs = 0 ; irs < (int)rs.size() ; irs++ ){
-      double weight = potMode ? getPoT(rs[irs], 3, true, true) : nDimuons[irs];
+//      double weight = potMode ? getPoT(rs[irs], 3,  true, true) : nDimuons[irs];
+      double weight = potMode ? getPoT(rs[irs], 3, false, true) : nDimuons[irs];
       average += weight * getPurity(rs[irs]);
       total   += weight;
    }

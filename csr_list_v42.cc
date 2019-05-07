@@ -506,7 +506,7 @@ void extData(){
       Track  trackP = event->tracks[findTrackIndex(dimuon.trackID_pos)];
       Track  trackN = event->tracks[findTrackIndex(dimuon.trackID_neg)];
 
-//      if(   dimuon.xF <= 0. ) continue;
+//      if(   dimuon.xF <= 0.1 ) continue;
 
       if( !   trackIsValid_2111_v42( trackP, rs[rs_current] ) ) continue;
       if( !   trackIsValid_2111_v42( trackN, rs[rs_current] ) ) continue;
@@ -691,7 +691,8 @@ void anaMain(){
       for( int it = 1 ; it <= 3 ; it++ ){
          if( it == 1 ) h1_raw_temp = (TH1D*)h1_rf_x2[it][ix]->Clone();
          else          h1_raw_temp->Add(h1_rf_x2[it][ix]);
-         h1_rf_x2[it][ix]->Scale(1/getRawPoT(rs, it));
+//         h1_rf_x2[it][ix]->Scale(1/getRawPoT(rs, it));
+         h1_rf_x2[it][ix]->Scale(1/getPoT(rs, it));
       }
 
       h1_avg_inte_x2[ix]->Divide(h1_raw_temp);

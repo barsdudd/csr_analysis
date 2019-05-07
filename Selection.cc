@@ -125,11 +125,11 @@ bool dimuonIsValid_2111_v42(Dimuon dimuon, int rs, bool looseMode){
 
 
    if( ! ( dimuon.xF <  .95 ) ) return false;
-   if( !looseMode ){
-      if( ! ( dimuon.xF > -.10 ) ) return false;
-   }else{
-      if( ! ( dimuon.xF > -.10 ) ) return false;
-   }
+   // if( !looseMode ){
+   //    if( ! ( dimuon.xF > -.10 ) ) return false;
+   // }else{
+   //    if( ! ( dimuon.xF > -.10 ) ) return false;
+   // }
    if( ! ( dimuon.x2 >  .05 ) ) return false;
    if( ! ( dimuon.x2 <  .55 ) ) return false;
 
