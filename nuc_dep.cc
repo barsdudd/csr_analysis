@@ -632,8 +632,9 @@ void getRatioAndError(double& ratio, double& error,
    double e_h = 1;
    
 // double CommonFactor = aMassNum[3] / aMassNum[it] * aMass_a[it] / avogadro / e_A / T[it] / (aMass_a[3] / TDD / avogadro / e_d);
-// double CommonFactor = aMassNum[3] / aMassNum[it] * aMass_a[it] /            e_A / T[it] / (aMass_a[3] / TDD /            e_d);
-   double CommonFactor =  1          /                                         e_A / T[it] / (    1      / TDD /            e_d);
+//   double CommonFactor = aMassNum[3] / aMassNum[it] * aMass_a[it] /            e_A / T[it] / (aMass_a[3] / TDD /            e_d);
+   double CommonFactor = aMassNum[3] / aMassNum[it] * aMass_a[it] / aMass_a[3] * TDD / T[it] * e_A / e_d;
+// double CommonFactor =  1          /                                         e_A / T[it] / (    1      / TDD /            e_d);
 
 // double sigma_h = ( deno2 / AH    - subtE ) * aMass_a [ 1] / avogadro / e_h / THH  ;
    double sigma_h = ( deno2 / AH    - subtE ) * aMassNum[ 1] / avogadro / e_h / THH  ;
