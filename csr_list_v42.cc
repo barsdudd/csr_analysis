@@ -691,7 +691,7 @@ void anaMain(){
       for( int it = 1 ; it <= 3 ; it++ ){
          if( it == 1 ) h1_raw_temp = (TH1D*)h1_rf_x2[it][ix]->Clone();
          else          h1_raw_temp->Add(h1_rf_x2[it][ix]);
-//         h1_rf_x2[it][ix]->Scale(1/getRawPoT(rs, it));
+//         h1_rf_x2[it][ix]->Scale(1/getPoT(rs, it));
          h1_rf_x2[it][ix]->Scale(1/getPoT(rs, it));
       }
 
@@ -714,7 +714,7 @@ void anaMain(){
          for( int it = 1 ; it <= 3 ; it++ ){
             if( it == 1 ) h1_raw_temp = (TH1D*)h1_rf_x2_ped[ip][it][ix]->Clone();
             else          h1_raw_temp ->   Add(h1_rf_x2_ped[ip][it][ix]);
-            h1_rf_x2_ped[ip][it][ix]->Scale(1/getRawPoT(rs, it));
+            h1_rf_x2_ped[ip][it][ix]->Scale(1/getPoT(rs, it));
          }
          h1_avg_inte_x2_ped[ip][ix]->Divide(h1_raw_temp);
          oss.str("");
@@ -730,7 +730,7 @@ void anaMain(){
       for( int it = 1 ; it <= 3 ; it++ ){
          if( it == 1 ) h1_raw_temp = (TH1D*)h1_rf_mass[it][iMass]->Clone();
          else          h1_raw_temp->Add(h1_rf_mass[it][iMass]);
-         h1_rf_mass[it][iMass]->Scale(1/getRawPoT(rs, it));
+         h1_rf_mass[it][iMass]->Scale(1/getPoT(rs, it));
       }
       h1_avg_inte_mass[iMass]->Divide(h1_raw_temp);
       oss.str("");
@@ -742,7 +742,7 @@ void anaMain(){
       for( int it = 1 ; it <= 3 ; it++ ){
          if( it == 1 ) h1_raw_temp = (TH1D*)h1_rf_x1[it][iX1]->Clone();
          else          h1_raw_temp->Add(h1_rf_x1[it][iX1]);
-         h1_rf_x1[it][iX1]->Scale(1/getRawPoT(rs, it));
+         h1_rf_x1[it][iX1]->Scale(1/getPoT(rs, it));
       }
       h1_avg_inte_x1[iX1]->Divide(h1_raw_temp);
       oss.str("");
@@ -754,7 +754,7 @@ void anaMain(){
       for( int it = 1 ; it <= 3 ; it++ ){
          if( it == 1 ) h1_raw_temp = (TH1D*)h1_rf_xF[it][iXF]->Clone();
          else          h1_raw_temp->Add(h1_rf_xF[it][iXF]);
-         h1_rf_xF[it][iXF]->Scale(1/getRawPoT(rs, it));
+         h1_rf_xF[it][iXF]->Scale(1/getPoT(rs, it));
       }
       h1_avg_inte_xF[iXF]->Divide(h1_raw_temp);
       oss.str("");
@@ -766,7 +766,7 @@ void anaMain(){
       for( int it = 1 ; it <= 3 ; it++ ){
          if( it == 1 ) h1_raw_temp = (TH1D*)h1_rf_pT[it][iPT]->Clone();
          else          h1_raw_temp->Add(h1_rf_pT[it][iPT]);
-         h1_rf_pT[it][iPT]->Scale(1/getRawPoT(rs, it));
+         h1_rf_pT[it][iPT]->Scale(1/getPoT(rs, it));
       }
       h1_avg_inte_pT[iPT]->Divide(h1_raw_temp);
       oss.str("");
