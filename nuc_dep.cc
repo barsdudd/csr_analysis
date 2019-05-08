@@ -806,7 +806,8 @@ void anaMain(){
             h1_raw_temp[it]->Add(h1_rf_x2[it][ix]);
          else
             h1_raw_temp [it] = (TH1D*)h1_rf_x2[it][ix]->Clone();
-         h1_rf_x2[it][ix]->Scale(1/getRawPoT(rs, it));
+//         h1_rf_x2[it][ix]->Scale(1/getRawPoT(rs, it));
+         h1_rf_x2[it][ix]->Scale(1/getPoT(rs, it));
 
          if( it == 4 ){
             h1_avg_inte_x2[it][ix]->Divide(h1_raw_temp[it]);
@@ -844,7 +845,8 @@ void anaMain(){
       }
       for( int it = 1 ; it <=7 ; it++ ){
          h1_raw_temp[it]->Add(h1_rf_mass[it][iMass]);
-         h1_rf_mass[it][iMass]->Scale(1/getRawPoT(rs, it));
+//         h1_rf_mass[it][iMass]->Scale(1/getRawPoT(rs, it));
+         h1_rf_mass[it][iMass]->Scale(1/getPoT(rs, it));
          if (it < 5) continue;
          h1_avg_inte_mass[it][iMass]->Add(h1_avg_inte_mass[3][iMass]);
          h1_avg_inte_mass[it][iMass]->Divide(h1_raw_temp[it]);
@@ -874,7 +876,8 @@ void anaMain(){
       }
       for( int it = 1 ; it <=7 ; it++ ){
          h1_raw_temp[it]->Add(h1_rf_x1[it][iX1]);
-         h1_rf_x1[it][iX1]->Scale(1/getRawPoT(rs, it));
+//         h1_rf_x1[it][iX1]->Scale(1/getRawPoT(rs, it));
+         h1_rf_x1[it][iX1]->Scale(1/getPoT(rs, it));
          if (it < 5) continue;
          h1_avg_inte_x1[it][iX1]->Add(h1_avg_inte_x1[3][iX1]);
          h1_avg_inte_x1[it][iX1]->Divide(h1_raw_temp[it]);
@@ -904,7 +907,8 @@ void anaMain(){
       }
       for( int it = 1 ; it <=7 ; it++ ){
          h1_raw_temp[it]->Add(h1_rf_xF[it][iXF]);
-         h1_rf_xF[it][iXF]->Scale(1/getRawPoT(rs, it));
+//         h1_rf_xF[it][iXF]->Scale(1/getRawPoT(rs, it));
+         h1_rf_xF[it][iXF]->Scale(1/getPoT(rs, it));
          if (it < 5) continue;
          h1_avg_inte_xF[it][iXF]->Add(h1_avg_inte_xF[3][iXF]);
          h1_avg_inte_xF[it][iXF]->Divide(h1_raw_temp[it]);
@@ -935,7 +939,8 @@ void anaMain(){
       }
       for( int it = 1 ; it <=7 ; it++ ){
          h1_raw_temp[it]->Add(h1_rf_pT[it][iPT]);
-         h1_rf_pT[it][iPT]->Scale(1/getRawPoT(rs, it));
+//         h1_rf_pT[it][iPT]->Scale(1/getRawPoT(rs, it));
+         h1_rf_pT[it][iPT]->Scale(1/getPoT(rs, it));
          if (it < 5) continue;
          h1_avg_inte_pT[it][iPT]->Add(h1_avg_inte_pT[3][iPT]);
          h1_avg_inte_pT[it][iPT]->Divide(h1_raw_temp[it]);
