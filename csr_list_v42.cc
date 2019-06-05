@@ -963,6 +963,20 @@ void printRatio(TGraphErrors* tge, const char* name){
    ofs.close();
 }
 
+void printRatioForXFitter(TGraphAsymmErrors* tge, TGraphAsymmErrors* tge_sys, const char* name){
+   ofstream ofs;
+   ofs.open(name);
+   for( int ip = 0 ; ip < tge->GetN() ; ip++ ){
+      double x, y, ye;
+      tge->GetPoint(ip, x, y);
+      ye = tge->GetErrorYhigh(ip);
+      double ySys;
+      tge_sys->GetPoint(ip, x, ySys);
+      ofs << 1 << "\t" << x2_bin[ip] << "\t" << x2_bin[ip+1] << "\t" << y << "\t" << ye << "\t" << ySys << "\n";
+   }
+   ofs.close();
+}
+
 void saveHists(){
    saveFile->cd();
    for( int ih = 0 ; ih < (int)vec_th1_save.size() ; ih++ )
@@ -1204,6 +1218,8 @@ void drawMain(){
    tge_syst->SetMarkerStyle(20);
 
    vec_csr_save.push_back(tge_syst);
+
+   printRatioForXFitter(cent_csr, tge_syst, "xFitter_input.txt");
 
    drawCSR();
    saveCSR();
