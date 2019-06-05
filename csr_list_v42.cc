@@ -624,6 +624,16 @@ void extMain(){
 ///////////////////
 //    ANALYZE    //
 ///////////////////
+void printTH1(TH1D* h1, const char* name){
+   ofstream ofs;
+   ofs.open(name);
+   for( int ip = 1 ; ip <= h1->GetNbinsX() ; ip++ ){
+      ofs << h1->GetBinCenter(ip) << "\t" << h1->GetBinContent(ip) << "\t" 
+          << h1->GetBinError (ip) << endl;
+   }
+   ofs.close();
+}
+
 void normHist(TH1D*& h1, int tgt){
    h1->Scale(1/getPoT(rs, tgt));
 }
@@ -687,10 +697,15 @@ void anaMain(){
 
    TH1D* h1_raw_temp;
 /////// x2 /////////
+   ostringstream oss_yield_sum[4];
    for( int ix = 0 ; ix < nBinsX2 ; ix++ ){
       for( int it = 1 ; it <= 3 ; it++ ){
          if( it == 1 ) h1_raw_temp = (TH1D*)h1_rf_x2[it][ix]->Clone();
          else          h1_raw_temp->Add(h1_rf_x2[it][ix]);
+         oss.str("");
+         oss << "yield_h1_rf_x2_" << it << "_" << ix << ".txt";
+         printTH1(h1_rf_x2[it][ix], oss.str().c_str());
+         oss_yield_sum[it] << h1_rf_x2[it][ix]->Integral() << "\t";
          h1_rf_x2[it][ix]->Scale(1/getRawPoT(rs, it));
       }
 
@@ -699,6 +714,12 @@ void anaMain(){
       oss << "gr_rf_ratio_x2_" << ix;
       gr_rf_ratio_x2[ix] = getRatio(h1_rf_x2[3][ix], h1_rf_x2[1][ix], h1_rf_x2[2][ix], h1_avg_inte_x2[ix], oss.str().c_str());
    }
+   ofstream ofs_yield_sum;
+   ofs_yield_sum.open("yield_sum.txt");
+   for( int it = 1 ; it <= 3 ; it++ )
+      ofs_yield_sum << targetType[it] << "\t" << oss_yield_sum[it].str() << "\n";
+   ofs_yield_sum.close();
+
 /////// x2 /////////
 
    h1_avg_x2    ->Divide(h1_raw_x2  );
@@ -938,16 +959,6 @@ void printRatio(TGraphErrors* tge, const char* name){
       tge->GetPoint(ip, x, y);
       ye = tge->GetErrorY(ip);
       ofs << y << "\t" << ye << "\t" << x << endl;
-   }
-   ofs.close();
-}
-
-void printRatioTH1(TH1D* h1, const char* name){
-   ofstream ofs;
-   ofs.open(name);
-   for( int ip = 1 ; ip <= h1->GetNbinsX() ; ip++ ){
-      ofs << h1->GetBinCenter(ip) << "\t" << h1->GetBinContent(ip) << "\t" 
-          << h1->GetBinError (ip) << endl;
    }
    ofs.close();
 }
