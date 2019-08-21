@@ -93,6 +93,13 @@ TH1D* h1_avg_inte_x2[8]; // [x2]
 TGraphErrors* gr_rf_ratio_x2[8]; // [x2 bins]
 /////// x2 ////////
 
+/////// EACH VALS IN X2 BINS ////////
+double min_x1[7] = {1, 1, 1, 1, 1, 1, 1};
+double max_x1[7] = {0, 0, 0, 0, 0, 0, 0};
+double min_pT[7] = {4, 4, 4, 4, 4, 4, 4};
+double max_pT[7] = {0, 0, 0, 0, 0, 0, 0};
+/////// EACH VALS IN X2 BINS ////////
+
 /////// x2 syst ////////
 TH1D* h1_rf_x2_ped[2][4][8]; // systematics for pedestal: [low/high][target type (dummy, LH2, Empty, LD2)][x2 bins]
 TH1D* h1_avg_inte_x2_ped[2][8]; // [low/high][x2]
@@ -524,6 +531,13 @@ void extData(){
       if( ix == -1 ) continue;
       if( event->targetPos > 3 ) continue;
 
+      double pT = sqrt( pow(dimuon.vtx_mom.X(), 2) + pow(dimuon.vtx_mom.Y(), 2) );
+
+      if( min_x1[ix] > dimuon.x1 ) min_x1[ix] = dimuon.x1;
+      if( max_x1[ix] < dimuon.x1 ) max_x1[ix] = dimuon.x1;
+      if( min_pT[ix] >        pT ) min_pT[ix] =        pT;
+      if( max_pT[ix] <        pT ) max_pT[ix] =        pT;
+
 //      event->inte_t[16] *= 1. - 0.0016;
 
       h1_rf_x2[event->targetPos][ix]->Fill(event->inte_t[16]);
@@ -548,7 +562,7 @@ void extData(){
          h1_rf_xF      [event->targetPos][iXF]->Fill(event->inte_t[16]                   );
          h1_avg_inte_xF                  [iXF]->Fill(event->inte_t[16], event->inte_t[16]);
       }
-      double pT = sqrt( pow(dimuon.vtx_mom.X(), 2) + pow(dimuon.vtx_mom.Y(), 2) );
+
       int iPT = getIPT(pT);
       if( iPT   != -1 ){
          h1_rf_pT      [event->targetPos][iPT]->Fill(event->inte_t[16]                   );
@@ -598,6 +612,10 @@ void extMain(){
    int prev = -1;
    int curr =  0;
    bool cont_change = false;
+   bool skipData    = false;
+
+   int prev_runID   = -1;
+   int prev_eventID = -1;
    for( int ie = 0 ; ie < tree->GetEntries() ; ++ie){    
       tree->GetEntry(ie);
       curr = (ie+1) * 100 / tree->GetEntries();
@@ -614,7 +632,16 @@ void extMain(){
          cout << "\n" << "RUNID: " << event->runID << " | CHANGE TO \"RS68\"" << endl;
          cont_change = true;
       }
+
+      if( prev_runID <  event->runID && skipData )
+         skipData = false;
+      if( prev_runID == event->runID && !skipData && prev_eventID < event->runID )
+         skipData = true;
+      if( skipData ) continue;
+
       extData();
+      prev_runID   = event->  runID;
+      prev_eventID = event->eventID;
 
    }
    cout << endl;
@@ -974,6 +1001,33 @@ void printRatioForXFitter(TGraphAsymmErrors* tge, TGraphAsymmErrors* tge_sys, co
       tge_sys->GetPoint(ip, x, ySys);
       ofs << 1 << "\t" << x2_bin[ip] << "\t" << x2_bin[ip+1] << "\t" << y << "\t" << ye << "\t" << ySys << "\n";
    }
+
+   ofs << "---------------------------" << endl;
+   ofs << "double min_x1[7] = {";
+   for( int ix = 0 ; ix < nBinsX2 ; ix++ ){
+      ofs << min_x1[ix];
+      if( ix < nBinsX2 -1 ) ofs << ", ";
+      else                  ofs << "};\n";
+   }
+   ofs << "double max_x1[7] = {";
+   for( int ix = 0 ; ix < nBinsX2 ; ix++ ){
+      ofs << max_x1[ix];
+      if( ix < nBinsX2 -1 ) ofs << ", ";
+      else                  ofs << "};\n";
+   }
+   ofs << "double min_pT[7] = {";
+   for( int ix = 0 ; ix < nBinsX2 ; ix++ ){
+      ofs << min_pT[ix];
+      if( ix < nBinsX2 -1 ) ofs << ", ";
+      else                  ofs << "};\n";
+   }
+   ofs << "double max_pT[7] = {";
+   for( int ix = 0 ; ix < nBinsX2 ; ix++ ){
+      ofs << max_pT[ix];
+      if( ix < nBinsX2 -1 ) ofs << ", ";
+      else                  ofs << "};\n";
+   }
+   ofs << "---------------------------" << endl;
    ofs.close();
 }
 
